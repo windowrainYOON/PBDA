@@ -4,12 +4,13 @@ import sys
 
 fpath = sys.argv[1]
 
+# seqdata 저장
 genedic = {}
 seq = ''
 for line in open(fpath):
-  if line.rstrip().isalpha():
+  if line.rstrip().isalpha(): #seq인 경우 seq data string으로 저장
     seq += line.rstrip()
-  if not line.rstrip().isalpha():
+  if not line.rstrip().isalpha(): #gene인 경우 genedic에 {gene 이름 : [시작인덱스, 끝 인덱스], ...} 저장
     [_name, _start, _end] = line.split()
     genedic[_name] = [int(_start), int(_end)]
 
@@ -42,4 +43,4 @@ for i in range(len(geneCount)-1):
       result[key] = geneCount[i+1]
 
 for (key, value) in result.items():
-  print("%s : %d %s" %(key, value, chr(0x258C)*value))
+  print("%s : %*d %s" %(key, len(str(sorted(list(result.values()))[-1])), value, chr(0x258C)*value))
