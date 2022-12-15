@@ -20,6 +20,7 @@ def multiple_seq_reader(fpath):
   seqdic[name] = seq
   return seqdic
 
+# 같은 index에서 겹치는 kmer의 수를 count하는 함수
 def seq_overlap_counter(seq1, seq2, kmer):
   count_result = 0
   for i in range(0, len(seq1) - kmer):

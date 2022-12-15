@@ -36,6 +36,7 @@ def get_kmers_by_seq(seq, kmer):
     kmers.append(get_kmer)
   return kmers
 
+# 두 리스트의 교집합을 반환하는 함수
 def intersection(list1, list2):
     result = [value for value in list1 if value in list2]
     return result

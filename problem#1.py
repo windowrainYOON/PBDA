@@ -19,6 +19,7 @@ def single_seq_reader(fpath):
 def seq_reverser(seq):
   return seq[::-1]
 
+#seq로부터 중복 없는 kmer를 반환하는 함수
 def get_kmers_by_seq(seq, kmer):
   kmers = []
   for i in range(len(seq) - kmer):

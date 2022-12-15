@@ -28,11 +28,10 @@ def kmer_slicer(seq, kmer):
 #string 두개를 받아서 같은 index에 같은 알파벳이 몇개나 있는지 count해서 반환하는 함수
 def similarity_checker(str1, str2):
   similarity_count = 0
-  for i in range(len(str1)):
+  for i in range(len(str1)-1):
     if str1[i] != str2[i]: continue
     if str1[i] == str2[i]: similarity_count += 1
   return similarity_count
-
 
 
 seqdic = multiple_seq_reader(fpath)

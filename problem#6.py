@@ -19,7 +19,7 @@ def multiple_seq_reader(fpath):
   seqdic[name] = seq
   return seqdic
 
-# 두 seq를 읽어 같은 index에 존재하는 kmer가 몇개가 있는지 count하고 가장 신 kmer를 반환하는 함수
+# 두 seq를 읽어 같은 index에 존재하는 kmer가 몇개가 있는지 count하고 가장 긴 kmer를 반환하는 함수
 def seq_overlap_counter(seq1, seq2, kmer):
   count_result = 0
   maxkmer = ''
